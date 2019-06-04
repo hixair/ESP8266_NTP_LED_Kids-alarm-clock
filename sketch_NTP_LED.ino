@@ -31,20 +31,20 @@ void setup(){
  
 
 void loop() {
-  digitalWrite(2,HIGH);
-  timeClient.update();
+  digitalWrite(2,HIGH);     //Switching the led Off
+  timeClient.update();      //Updating time from NTP
 
-  int t = timeClient.getHours() * 100 + timeClient.getMinutes();
+  int t = timeClient.getHours() * 100 + timeClient.getMinutes();   //present the time in another form to simplyfy operations
   Serial.println(t);
 
-  if ((t >= 800 && t <= 830) || (t >= 1530 && t <= 1630)) {
-    digitalWrite(LED_BUILTIN, LOW);
+  if ((t >= 800 && t <= 830) || (t >= 1530 && t <= 1630)) {.      //Add condition, if time is equal or greater than 8:00, switch leds on. NEVER put 0800 instead 800.
+    digitalWrite(LED_BUILTIN, LOW);                               //Switch leds ON
     digitalWrite(2, LOW);
   } else {
     digitalWrite(LED_BUILTIN, HIGH);
     digitalWrite(2, HIGH);
   }
   
-  Serial.println(timeClient.getFormattedTime());
+  Serial.println(timeClient.getFormattedTime());                 //print time on serial
 
 }
