@@ -2,8 +2,8 @@
 #include <ESP8266WiFi.h>
 #include <WiFiUdp.h>
 
-const char *ssid     = "bouriquet";
-const char *password = "929eac60ba60eac929";
+const char *ssid     = "SSID";
+const char *password = "password";
 
 WiFiUDP ntpUDP;
 
