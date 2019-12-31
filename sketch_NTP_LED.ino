@@ -9,7 +9,7 @@ WiFiUDP ntpUDP;
 
 // By default 'pool.ntp.org' is used with 60 seconds update interval and
 // no offset
-NTPClient timeClient(ntpUDP, "europe.pool.ntp.org", 7200, 600000);
+NTPClient timeClient(ntpUDP, "europe.pool.ntp.org", 3600, 600000);
 
 // You can specify the time server pool and the offset, (in seconds)
 // additionaly you can specify the update interval (in milliseconds).
@@ -33,7 +33,9 @@ void setup(){
 void loop() {
   digitalWrite(2,HIGH);     //Switching the led Off
   timeClient.update();      //Updating time from NTP
-
+  Serial.print ( "syncing time" );
+ 
+  
   int t = timeClient.getHours() * 100 + timeClient.getMinutes();   //present the time in another form to simplyfy operations
   Serial.println(t);
 
