@@ -19,6 +19,7 @@ Onboard LEDs are more than enough to shine through the plastic toy :
 Todo : 
 
 ~- Blink leds until wifi is connected and NTP time aquired.~
+- Add a web interface for editing times
 
 There are several good NTP librairies and i used the one from : https://github.com/arduino-libraries/NTPClient .
 
